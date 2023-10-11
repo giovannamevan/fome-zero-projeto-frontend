@@ -1,0 +1,36 @@
+
+.centered-divs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+
+  .login-option {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #e58a1f;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  
+  .login-option h3 {
+    color: #e58a1f;
+  }
+  
+  .login-option i {
+    font-size: 2em;
+    color: #e58a1f;
+  }
+  
+  #doador-option {
+    background-color: #e58a1f;
+    color: white;
+  }
+  
+  #interessado-option {
+    background-color: white;
+    color: #e58a1f;
+  }
+  
