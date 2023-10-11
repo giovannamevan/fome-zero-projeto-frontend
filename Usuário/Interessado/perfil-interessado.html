@@ -1,13 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/perfil-interessado.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Meu perfil</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Doador/styles/doador.css">
+    <title>Meu Perfil</title>
 </head>
+
 <body>
-    
+    <header>
+        <div id="title">
+            <h1><span>Fome</span> Zero</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#" target="_blank">Meu perfil</a></li>
+                <li><a href="#" target="_blank">Meus Interesses</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mt-5">
+
+            <h2 class="text-white">Alterar Dados do Perfil</h2>
+            <form>
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" class="form-control" id="senha" placeholder="Senha">
+                </div>
+
+                <div class="form-group">
+                    <label for="profileImage">Alterar imagem</label>
+                    <input type="file" accept="image/*" class="form-control-file" id="profileImage"
+                        onchange="displayImage(this)">
+                </div>
+                <div id="profileImagePreview" class="mt-3"></div>
+
+                <button type="submit" class="btn mt-1">Salvar Alterações</button>
+            </form>
+        </article>
+    </main>
+
+    <footer class="mt-4">
+        <div class="footer text-center">
+            Desenvolvido por Giovanna Evangelista, Alicia Feliciano e Giovanna Guzzardi - 2023
+        </div>
+    </footer>
+
+    <script>
+        function displayImage(input) {
+            var preview = document.getElementById('profileImagePreview');
+            preview.innerHTML = '';
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    var image = document.createElement('img');
+                    image.src = e.target.result;
+                    image.className = 'img-fluid rounded-circle';
+                    preview.appendChild(image);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
