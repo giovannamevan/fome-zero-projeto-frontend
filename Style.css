@@ -19,6 +19,10 @@ body {
     flex-direction: column;
     line-height: 10px;
   }
+
+  .button-format {
+    padding: 0;
+  }
   
   nav ul {
     list-style: none;
