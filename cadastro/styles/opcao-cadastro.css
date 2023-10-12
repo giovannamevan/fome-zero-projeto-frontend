@@ -6,6 +6,9 @@
     height: 100vh;
   }
   
+  .button-format {
+    padding: 0;
+  }
 
   .login-option {
     text-align: center;
