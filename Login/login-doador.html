@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../cadastro/styles/form.css">
     <title>Login de Doador</title>
 </head>
+
 <body>
     <header>
         <div id="title">
@@ -15,15 +17,15 @@
         <nav>
             <ul>
                 <li><a href="../Public/Index.html">Início</a></li>
-                <li><a href="../Public/sobre.html" target="_blank">Sobre</a></li>
-                <li><a href="../Public/lista-produtos.html" target="_blank">Produtos</a></li>
-                <li><a href="../login/login.html" target="_blank">Login</a></li>
-                <li><a href="../cadastro/opcao-cadastro.html" target="_blank">Cadastro</a></li>
+                <li><a href="../Public/sobre.html">Sobre</a></li>
+                <li><a href="../Public/lista-produtos.html">Produtos</a></li>
+                <li><a class="select" href="../login/login.html">Login</a></li>
+                <li><a href="../cadastro/opcao-cadastro.html">Cadastro</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container mt-5">
+    <main class="d-flex justify-content-center">
         <form>
             <div class="form-group">
                 <label for="email">Email</label>
@@ -38,14 +40,14 @@
                 <label class="form-check-label" for="rememberMe">Lembrar-me</label>
             </div>
             <div class="form-group text-center col-md-4  button-format"">
-                <button type="submit" class="btn btn-block">Entrar</button>
+                <button type=" submit" class="btn btn-block">Entrar</button>
             </div>
             <div class="form-group text-center button-format">
                 <a href="#">Esqueceu a senha?</a>
             </div>
-            <div class="form-group text-center">
+            <!-- <div class="form-group text-center">
                 <p class="text-danger">Mensagem de erro aqui, se aplicável.</p>
-            </div>
+            </div> -->
         </form>
     </main>
 
@@ -59,4 +61,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
