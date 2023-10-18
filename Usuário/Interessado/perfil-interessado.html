@@ -16,42 +16,42 @@
         </div>
         <nav>
             <ul>
-                <li><a href="./../../Public/lista-produtos.html">Produtos</a></li>
-                <li><a href="../Interessado/perfil-interessado.html" target="_blank">Meu perfil</a></li>
-                <li><a href="../Interessado/meus-interesses.html" target="_blank">Meus Interesses</a></li>
+                <li><a href="./lista-produtos.html">Produtos Disponiveis</a></li>
+                <li><a href="./meus-interesses.html">Produtos Adquiridos</a></li>
+                <li><a class="select" href="./perfil-interessado.html" target=" ">Meu perfil</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="container mt-5">
 
-            <h2 class="text-white">Alterar Dados do Perfil</h2>
-            <form>
-                <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Nome">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <label for="senha">Senha</label>
-                    <input type="password" class="form-control" id="senha" placeholder="Senha">
-                </div>
+        <h2 class="text-white">Alterar Dados do Perfil</h2>
+        <form>
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Nome">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" class="form-control" id="senha" placeholder="Senha">
+            </div>
 
-                <div class="form-group">
-                    <label for="profileImage">Alterar imagem</label>
-                    <input type="file" accept="image/*" class="form-control-file" id="profileImage"
-                        onchange="displayImage(this)">
-                </div>
-                <div id="profileImagePreview" class="mt-3"></div>
+            <div class="form-group">
+                <label for="profileImage">Alterar imagem</label>
+                <input type="file" accept="image/*" class="form-control-file" id="profileImage"
+                    onchange="displayImage(this)">
+            </div>
+            <div id="profileImagePreview" class="mt-3"></div>
 
-                <button type="submit" class="btn mt-1">Salvar Alterações</button>
-                <button type="button" class="btn btn-outline-light excluir" id="btnExcluirConta" data-toggle="modal"
-                    data-target="#confirmExcluirModal">Excluir Conta</button>
-                
-            </form>
+            <button type="submit" class="btn mt-1">Salvar Alterações</button>
+            <button type="button" class="btn btn-outline-light excluir" id="btnExcluirConta" data-toggle="modal"
+                data-target="#confirmExcluirModal">Excluir Conta</button>
+
+        </form>
         </article>
     </main>
 
@@ -87,4 +87,5 @@
 
 </body>
 <script src="../../../JavaScript/script.perfis.js"></script>
+
 </html>

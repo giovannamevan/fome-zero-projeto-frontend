@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var form = document.querySelector('form');
 
     form.addEventListener('submit', function (event) {
-        event.preventDefault(); 
+        event.preventDefault();
 
         var email = document.getElementById('email-doador').value;
         var password = document.getElementById('password-doador').value;
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Se a validação passar, redirecionará para a página do perfil do doador
-        window.location.href = '../Principal/Usuário/Doador/perfil-doador.html';
+        window.location.href = '.. /Usuário/Doador/perfil-doador.html';
     });
 });
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var errorMessage = document.getElementById('errorMessage');
 
     loginForm.addEventListener('submit', function (event) {
-        event.preventDefault(); 
+        event.preventDefault();
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
 
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
             errorMessage.innerText = 'Por favor, preencha todos os campos.';
             return;
         }
-        window.location.href = '../Principal/Usuário/Interessado/perfil-interessado.html';
+        window.location.href = '.. /Usuário/Interessado/perfil-interessado.html';
     });
 });
 
