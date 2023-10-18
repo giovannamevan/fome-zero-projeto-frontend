@@ -20,7 +20,7 @@
             <ul>
                 <li><a href="../Index.html">Início</a></li>
                 <li><a href="../Public/sobre.html">Sobre</a></li>
-                <li><a class="select" href="../Login/login-doador.html">Login</a></li>
+                <li><a class="select" href="../Login/login_certo.html">Login</a></li>
                 <li><a href="../Cadastro/opcao-cadastro.html">Cadastro</a></li>
             </ul>
         </nav>
@@ -36,9 +36,23 @@
                 <label for="password">Senha</label>
                 <input type="password" class="form-control" id="password-doador" required>
             </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="rememberMe-doador">
-                <label class="form-check-label" for="rememberMe">Lembrar-me</label>
+            <div class="form-group">
+                <label class="form-check-label form-group" for="identidade">O que você é</label>
+                <div class="d-flex align-items-center" id="identidade">
+                    <div class="form-group m-0 d-flex align-items-center">
+                        <input type="radio" class="m-0 mr-2 mycheckbox" id="doador" name="identidade">
+                        <label class="m-0" for="doador">Doador</label>
+                    </div>
+                    <div class="form-group form-check m-0 d-flex align-items-center">
+                        <input type="radio" class="m-0 mr-2 mycheckbox" id="interessado" name="identidade">
+                        <label class="m-0" for="interessado">Interessado</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group  d-flex align-items-center">
+                <input type="checkbox" class="m-0 mr-2 mycheckbox" id="rememberMe">
+                <label class="m-0" for="rememberMe-doador">lembrar-me</label>
             </div>
             <div class="form-group text-center col-md-4  button-format">
                 <button type="submit" class="btn btn-block">Entrar</button>
