@@ -1,76 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../Style/form.css">
-    <link rel="stylesheet" href="../Style/media.css">
-    <title>Login de Doador</title>
-    <script src="../JavaScript/script.js" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../Style/form.css">
+<link rel="stylesheet" href="../Style/media.css">
+<title>Login</title>
+<script src="../JavaScript/script.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <div id="title">
-            <h1><span>Fome</span> Zero</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="../Index.html">Início</a></li>
-                <li><a href="../Public/sobre.html">Sobre</a></li>
-                <li><a class="select" href="../Login/login_certo.html">Login</a></li>
-                <li><a href="../Cadastro/opcao-cadastro.html">Cadastro</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <div id="title">
+        <h1><span>Fome</span> Zero</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="../Index.html">Início</a></li>
+            <li><a href="../Public/sobre.html">Sobre</a></li>
+            <li><a class="select" href="../Login/login_certo.html">Login</a></li>
+            <li><a href="../Cadastro/opcao-cadastro.html">Cadastro</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main class="d-flex justify-content-center">
-        <form>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email-doador" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" class="form-control" id="password-doador" required>
-            </div>
-            <div class="form-group">
-                <label class="form-check-label form-group" for="identidade">O que você é</label>
-                <div class="d-flex align-items-center" id="identidade">
-                    <div class="form-group m-0 d-flex align-items-center">
-                        <input type="radio" class="m-0 mr-2 mycheckbox" id="doador" name="identidade">
-                        <label class="m-0" for="doador">Doador</label>
-                    </div>
-                    <div class="form-group form-check m-0 d-flex align-items-center">
-                        <input type="radio" class="m-0 mr-2 mycheckbox" id="interessado" name="identidade">
-                        <label class="m-0" for="interessado">Interessado</label>
-                    </div>
+<main class="d-flex justify-content-center">
+    <form id="loginForm" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" class="form-control" id="password" required>
+        </div>
+        <div class="form-group">
+            <div class="d-flex align-items-center" id="identidade">
+                <div class="form-group m-0 d-flex align-items-center">
+                    <input type="radio" class="m-0 mr-2 mycheckbox" id="option" name="identidade">
+                    <label class="m-0" for="option">Doador</label>
+                </div>
+                <div class="form-group form-check m-0 d-flex align-items-center">
+                    <input type="radio" class="m-0 mr-2 mycheckbox" id="interessado" name="identidade">
+                    <label class="m-0" for="interessado">ONG/Organização</label>
                 </div>
             </div>
-
-            <div class="form-group  d-flex align-items-center">
-                <input type="checkbox" class="m-0 mr-2 mycheckbox" id="rememberMe">
-                <label class="m-0" for="rememberMe-doador">lembrar-me</label>
-            </div>
-            <div class="form-group text-center col-md-4  button-format">
-                <button type="submit" class="btn btn-block">Entrar</button>
-            </div>
-            <div class="form-group text-center button-format">
-                <a href="#">Esqueceu a senha?</a>
-            </div>
-            <!-- <div class="form-group text-center">
-                <p class="text-danger">Mensagem de erro aqui, se aplicável.</p>
-            </div> -->
-        </form>
-    </main>
-
-    <footer>
-        <div class="footer">
-            Desenvolvido por Giovanna Evangelista, Alicia Feliciano e Giovanna Guzzardi - 2023
         </div>
-    </footer>
+
+        <div class="form-group  d-flex align-items-center">
+            <input type="checkbox" class="m-0 mr-2 mycheckbox" id="rememberMe">
+            <label class="m-0" for="rememberMe">Lembrar-me</label>
+        </div>
+        <div class="form-group text-center col-md-4  button-format">
+            <button type="submit" class="btn btn-block">Entrar</button>
+        </div>
+        <div class="form-group text-center button-format">
+            <a href="#">Esqueceu a senha?</a>
+        </div>
+    </form>
+</main>
+
+<footer>
+    <div class="footer">
+        Desenvolvido por Giovanna Evangelista, Alicia Feliciano e Giovanna Guzzardi - 2023
+    </div>
+</footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
