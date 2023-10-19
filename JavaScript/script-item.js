@@ -26,3 +26,9 @@
          });
      });
 
+     document.querySelector('#back').addEventListener('click', function() {
+        var confirmacao = window.confirm('Tem certeza que cancelar a ação?');
+        if (confirmacao) {
+            window.location.href = './lista-produtos.html';
+        }
+    });
