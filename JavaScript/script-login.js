@@ -16,10 +16,9 @@ function validateForm() {
 
     // Adicione a lógica de redirecionamento
     if (isDoador) {
-        window.location.href = '../Usuário/Doador/perfil-doador.html';
+        window.location.href = '../Usuário/Doador/cadastrar-produtos.html';
     } else {
-        window.location.href = '../Usuário/Interessado/perfil-interessado.html';
+        window.location.href = '../Usuário/Interessado/lista-produtos.html';
     }
-
     return false; // Evitar o envio padrão do formulário
 }

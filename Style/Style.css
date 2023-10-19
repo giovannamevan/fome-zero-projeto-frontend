@@ -58,6 +58,7 @@ main {
   display: flex;
   flex-direction: row;
   margin-top: 50px;
+  overflow: auto;
 }
 
 .fit {
@@ -70,6 +71,10 @@ h2 {
   font-size: 40px;
   line-height: 5px;
   font-family: 'Poppins Medium', sans-serif;
+}
+
+.absolute {
+  display: absolute;
 }
 
 .custom_img {
@@ -173,4 +178,36 @@ html::-webkit-scrollbar-thumb {
   color: rgb(247, 214, 141);
   background-color: #fe8800;
   border-color: #fe8800;
+}
+
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.button1 {
+  border-radius: 2px;
+}
+
+.button2 {
+  border-radius: 4px;
+}
+
+.button3 {
+  border-radius: 8px;
+}
+
+.button4 {
+  border-radius: 12px;
+}
+
+.button5 {
+  border-radius: 50%;
 }
