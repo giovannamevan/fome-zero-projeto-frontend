@@ -59,6 +59,11 @@
         justify-content: space-between;
         align-items: start;
         margin: 20px 0;
+        width: min-content;
+        padding: 0;
+    }
 
+    .media-group {
+        padding: 0;
     }
 }
