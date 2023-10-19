@@ -11,55 +11,57 @@
 </head>
 
 <body>
-    <header>
-        <div id="title">
-            <h1><span>Fome</span> Zero</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="../Index.html">Início</a></li>
-                <li><a href="../Public/sobre.html">Sobre</a></li>
-                <li><a href="../Login/login_certo.html">Login</a></li>
-                <li><a class="select" href="../Cadastro/opcao-cadastro.html">Cadastro</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="fit">
+        <header>
+            <div id="title">
+                <h1><span>Fome</span> Zero</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../Index.html">Início</a></li>
+                    <li><a href="../Public/sobre.html">Sobre</a></li>
+                    <li><a href="../Login/login_certo.html">Login</a></li>
+                    <li><a class="select" href="../Cadastro/opcao-cadastro.html">Cadastro</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <main class="container mt-5">
-        <form>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="companyName">Nome da Empresa</label>
-                    <input type="text" class="form-control" id="companyName" required>
+        <main class="container mt-5">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="companyName">Nome da Empresa</label>
+                        <input type="text" class="form-control" id="companyName" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" required>
+                <div class="form-group">
+                    <label for="address">Endereço</label>
+                    <input type="text" class="form-control" id="address" required>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="address">Endereço</label>
-                <input type="text" class="form-control" id="address" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Telefone</label>
-                <input type="tel" class="form-control" id="phone" required>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="password">Senha</label>
-                    <input type="password" class="form-control" id="password" required>
+                <div class="form-group">
+                    <label for="phone">Telefone</label>
+                    <input type="tel" class="form-control" id="phone" required>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="confirmPassword">Confirmar Senha</label>
-                    <input type="password" class="form-control" id="confirmPassword" required>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="password">Senha</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="confirmPassword">Confirmar Senha</label>
+                        <input type="password" class="form-control" id="confirmPassword" required>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group text-center col-md-4 button-format">
-                <button type="submit" class="btn btn-block">Cadastrar</button>
-            </div>
-        </form>
-    </main>
+                <div class="form-group text-center col-md-4 button-format">
+                    <button type="submit" class="btn btn-block">Cadastrar</button>
+                </div>
+            </form>
+        </main>
+    </div>
 
     <footer>
         <div class="footer">
