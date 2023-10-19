@@ -1,40 +1,45 @@
-@media screen and (max-width: 760px){
+@media screen and (max-width: 1000px) {
 
-    header{
+    header {
         flex-direction: column;
     }
 
-    main{
+    main {
         flex-direction: column;
     }
 
-    h2{
+    h2 {
         font-size: 35px;
     }
 
-    form{
+    p {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    form {
         margin: 0 auto;
         margin-bottom: 2rem;
     }
 
-    input{
+    input {
         align-self: center;
         width: 100px;
     }
 
-    img{
+    img {
         display: none;
     }
 
-    ul{
-        text-align: center;
-    }
-    
-    aside{
+    ul {
         text-align: center;
     }
 
-    footer{
+    aside {
+        text-align: center;
+    }
+
+    footer {
         font-family: poppinslight;
         padding: 15px;
         margin-bottom: -20rem;
@@ -46,5 +51,19 @@
         background-color: #2e2c2c;
         color: white;
         text-align: center;
+    }
+
+    .media {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        margin: 20px 0;
+        width: min-content;
+        padding: 0;
+    }
+
+    .media-group {
+        padding: 0;
     }
 }
