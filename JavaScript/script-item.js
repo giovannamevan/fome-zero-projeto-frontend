@@ -15,4 +15,14 @@
         });
     });
 
+     // Seleciona todos os items que possuemS botões com a classe "editItem"
+     var editButtons = document.querySelectorAll('.editItem');
+
+     // Adiciona um evento de clique a cada botão de edição
+     editButtons.forEach(function (button) {
+         button.addEventListener('click', function () {
+             // Redireciona para a página de edição
+             window.location.href = '../Doador/editar_produtos.html';
+         });
+     });
 
