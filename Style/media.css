@@ -1,4 +1,4 @@
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1055px) {
 
     header {
         flex-direction: column;
@@ -41,6 +41,76 @@
 
     footer {
         font-family: poppinslight;
+        padding: 15px;
+        margin-bottom: -20rem;
+        font-size: 10px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #2e2c2c;
+        color: white;
+        text-align: center;
+    }
+
+    .media {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        margin: 20px 0;
+        width: min-content;
+        padding: 0;
+    }
+
+    .media-group {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 1055px) {
+    header {
+        flex-direction: column;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    p {
+        margin: 0 1rem;
+        /* Adjust margin for smaller screens */
+    }
+
+    form {
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+
+    input {
+        align-self: center;
+        width: 100px;
+    }
+
+    img {
+        display: none;
+    }
+
+    ul {
+        text-align: center;
+    }
+
+    aside {
+        text-align: center;
+    }
+
+    footer {
+        font-family: 'Poppins Light', sans-serif;
+        /* Correct font-family name */
         padding: 15px;
         margin-bottom: -20rem;
         font-size: 10px;

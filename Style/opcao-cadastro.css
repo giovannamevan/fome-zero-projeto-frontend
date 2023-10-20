@@ -1,39 +1,51 @@
-
 .centered-divs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .button-format {
-    padding: 0;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
+.button-format {
+  padding: 0;
+}
+
+.login-option {
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #e58a1f;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.login-option h3 {
+  color: #e58a1f;
+}
+
+.login-option i {
+  font-size: 2em;
+  color: #e58a1f;
+}
+
+#doador-option {
+  background-color: #e58a1f;
+  color: white;
+}
+
+#interessado-option {
+  background-color: white;
+  color: #e58a1f;
+}
+
+
+@media (max-width: 768px) {
   .login-option {
-    text-align: center;
-    padding: 20px;
-    border: 2px solid #e58a1f;
-    border-radius: 10px;
-    margin: 10px;
+    padding: 10px;
   }
-  
-  .login-option h3 {
-    color: #e58a1f;
+}
+
+
+@media (min-width: 1201px) {
+  .login-option {
+    padding: 30px;
   }
-  
-  .login-option i {
-    font-size: 2em;
-    color: #e58a1f;
-  }
-  
-  #doador-option {
-    background-color: #e58a1f;
-    color: white;
-  }
-  
-  #interessado-option {
-    background-color: white;
-    color: #e58a1f;
-  }
-  
+}

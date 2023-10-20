@@ -219,3 +219,33 @@ html::-webkit-scrollbar-thumb {
 .button5 {
   border-radius: 50%;
 }
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  nav li {
+    margin: 10px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  article {
+    padding-left: 0;
+  }
+}
+
+
+@media (min-width: 1201px) {
+  body {
+    max-width: 1400px;
+  }
+
+  nav li {
+    margin: 30px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+}
