@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert('As senhas não coincidem. Tente novamente.');
         } else {
             // Se a validação passar, redireciona para a página index
-            window.location.href = "../Index.html?message=success";
+            window.location.href = "../index.html?message=success";
             alert('Cadastro realizado com sucesso, faca login para continuar')
         }
     });
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
             alert('As senhas não coincidem. Tente novamente.');
         } else {
             // Se a validação passar, redireciona para a página index
-            window.location.href = "../Index.html?message=success";
+            window.location.href = "../index.html?message=success";
         }
     });
 });
