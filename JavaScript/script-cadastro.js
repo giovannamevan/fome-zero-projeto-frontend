@@ -1,7 +1,31 @@
+const baseApiUrl = "https://fome-zero-badkend.onrender.com/"
+
+async function postCadastro(cadastroPronto, endpoint) {
+    fetch(endpoint, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(cadastroPronto),
+    })
+        .then((response) => {
+            if (response.ok) {
+                return response.body
+            } else {
+                console.error("Erro ao realizar o post.");
+                console.log("deu BO ANOOOOOOO")
+            }
+        })
+        .catch((error) => {
+            console.error("Erro:", error);
+        });
+
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     var form = document.querySelector('form');
 
-    form.addEventListener('submit', function (event) {
+    form.addEventListener('submit', async function (event) {
         event.preventDefault(); // Impede o envio do formulário por padrão
 
         // Validação dos campos
@@ -17,17 +41,25 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (password !== confirmPassword) {
             alert('As senhas não coincidem. Tente novamente.');
         } else {
-            // Se a validação passar, redireciona para a página index
-            window.location.href = "../Index.html?message=success";
-            alert('Cadastro realizado com sucesso, faca login para continuar')
+            const formattedDonator = {
+                "nome_empresa": companyName,
+                "endereco": address,
+                "email": email,
+                "senha": password,
+                "telefone": phone
+            }
+
+            const donatorEndpoint = baseApiUrl + "donator/"
+            const result = await postCadastro(formattedDonator, donatorEndpoint)
         }
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+
+document.addEventListener("DOMContentLoaded", async function () {
     var form = document.querySelector('form');
 
-    form.addEventListener('submit', function (event) {
+    form.addEventListener('submit', async function (event) {
         event.preventDefault(); // Impede o envio do formulário por padrão
 
         // Validação dos campos
@@ -43,8 +75,21 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (passwordOng !== confirmPasswordOng) {
             alert('As senhas não coincidem. Tente novamente.');
         } else {
-            // Se a validação passar, redireciona para a página index
-            window.location.href = "../Index.html?message=success";
+            const formattedOng = {
+                "nome_organizacao": nameOng,
+                "tipo_interessado": typeOng,
+                "email": emailOng,
+                "senha": passwordOng,
+            }
+
+            console.log(formattedOng)
+
+            const donatorEndpoint = baseApiUrl + "ONG/"
+            console.log(donatorEndpoint)
+            const result = await postCadastro(formattedOng, donatorEndpoint)
+            console.log(result)
+            console.log('foi eu que fui ativado')
         }
     });
+
 });
