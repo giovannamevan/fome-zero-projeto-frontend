@@ -60,9 +60,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     var form = document.querySelector('form');
 
     form.addEventListener('submit', async function (event) {
-        event.preventDefault(); // Impede o envio do formulário por padrão
+        event.preventDefault();
 
-        // Validação dos campos
         var nameOng = document.getElementById('name-ong').value;
         var emailOng = document.getElementById('email-ong').value;
         var phoneOng = document.getElementById('phone-ong').value;
@@ -82,13 +81,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                 "senha": passwordOng,
             }
 
-            console.log(formattedOng)
-
             const donatorEndpoint = baseApiUrl + "ONG/"
-            console.log(donatorEndpoint)
             const result = await postCadastro(formattedOng, donatorEndpoint)
-            console.log(result)
-            console.log('foi eu que fui ativado')
         }
     });
 

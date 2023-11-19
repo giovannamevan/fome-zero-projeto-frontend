@@ -18,9 +18,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="./lista-produtos.html">Meus produtos</a></li>
-                <li><a class="select" href="../Doador/perfil-doador.html">Meu perfil</a></li>
-                <li><a href="../Doador/cadastrar-produtos.html">Adicionar Item</a>
+                <li><a id="link-meus-produtos" class="select" href="./lista-produtos.html">Meus produtos</a></li>
+                <li><a id="link-meu-perfil" href="./perfil-doador.html">Meu perfil</a></li>
+                <li><a id="link-adicionar-item" href="./cadastrar-produtos.html">Adicionar Item</a>
                 </li>
                 <li><a href="../../index.html"> <i class="fa-solid fa-right-from-bracket select"></i> </a></li>
             </ul>
@@ -51,7 +51,7 @@
             </div>
             <div id="profileImagePreview" class="mt-3"></div>
 
-            <button type="submit" class="btn mt-1">Salvar Alterações</button>
+            <button type="submit" class="btn mt-1" id="submitEdit">Salvar Alterações</button>
             <button type="button" class="btn btn-outline-light excluir" id="btnExcluirConta" data-toggle="modal"
                 data-target="#confirmExcluirModal">Excluir Conta</button>
 
@@ -65,10 +65,10 @@
         </div>
     </footer>
 
-    <script src="../../../JavaScript/script.perfis.js"></script>
+    <script src="../../JavaScript/script.perfis.js"></script>
+    <script src="../../JavaScript/script_doador_redirect.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>

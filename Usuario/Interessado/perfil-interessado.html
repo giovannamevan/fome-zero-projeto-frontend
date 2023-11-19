@@ -17,9 +17,10 @@
         </div>
         <nav>
             <ul>
-                <li><a href="./lista-produtos.html">Produtos Disponiveis</a></li>
-                <li><a href="./meus-interesses.html">Produtos Adquiridos</a></li>
-                <li><a class="select" href="./perfil-interessado.html">Meu perfil</a></li>
+                <li><a id="link-produtos-disponiveis" class="select" href="./lista-produtos.html">Produtos
+                        Disponiveis</a></li>
+                <li><a id="link-produtos-adquiridos" href="./meus-interesses.html">Produtos Adquiridos</a></li>
+                <li><a id="link-meu-perfil" href="./perfil-interessado.html">Meu perfil</a></li>
                 <li><a href="../../index.html"> <i class="fa-solid fa-right-from-bracket select"></i> </a></li>
             </ul>
         </nav>
@@ -49,7 +50,7 @@
             </div>
             <div id="profileImagePreview" class="mt-3"></div>
 
-            <button type="submit" class="btn mt-1">Salvar Alterações</button>
+            <button type="submit" class="btn mt-1" id="submitEdit">Salvar Alterações</button>
             <button type="button" class="btn btn-outline-light excluir" id="btnExcluirConta" data-toggle="modal"
                 data-target="#confirmExcluirModal">Excluir Conta</button>
 
@@ -88,6 +89,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
-<script src="../../../JavaScript/script.perfis.js"></script>
+<script src="../../JavaScript/script.perfis.js"></script>
+<script src="../../JavaScript/script_redirect.js"></script>
 
 </html>

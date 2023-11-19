@@ -6,16 +6,18 @@ let telefone = document.getElementById('telefone')
 let endereco = document.getElementById('endereco')
 let qtdCaixas = document.getElementById('caixa')
 let qtdUnidades = document.getElementById('unidades')
-let donator = {}
-const donatorId = getUrlParam('id')
+const productId = getUrlParam('id')
+const donatorId = getUrlParam('donatorId')
 const getDonatorEndpoint = baseApiUrl + `donator/${donatorId}`
-const postProductEndpoint = baseApiUrl + 'donator/postProduct'
+const editProductEndpoint = baseApiUrl + 'products/'
 
 const botao = document.getElementById('btn-principal').onclick = async (event) => {
     event.preventDefault()
-    const success = await postProduto(postProductEndpoint)
+    const success = await editProduct(editProductEndpoint)
     console.log(success)
-    /*if (success !== null) {
+    /*if (success !== null) {[
+    
+    ]
         alert("Produto adicionado com sucesso")
     }*/
     return
@@ -72,8 +74,9 @@ async function getLoggedDonator(endpoint) {
     }
 }
 
-async function postProduto(endpoint) {
+async function editProduct(endpoint) {
     const bodyToSend = {
+        "productId": productId,
         "donatorId": donatorId,
         "imagem": imagemProduto.value,
         "nome_produto": nomeProduto.value,
@@ -84,7 +87,7 @@ async function postProduto(endpoint) {
     console.log(bodyToSend)
 
     fetch(endpoint, {
-        method: "POST",
+        method: "PATCH",
         headers: {
             "Content-Type": "application/json",
         },
@@ -104,9 +107,9 @@ async function postProduto(endpoint) {
 }
 
 window.onload = async () => {
-    console.log("olaal  ")
+    console.log(donatorId)
+    console.log(productId)
     donator = await getLoggedDonator(getDonatorEndpoint)
-    console.log(donator)
     endereco.value = donator.endereco
     telefone.value = donator.telefone
 }

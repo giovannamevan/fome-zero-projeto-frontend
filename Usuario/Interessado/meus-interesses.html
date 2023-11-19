@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../../Style/Style.css">
     <link rel="stylesheet" href="../../../Style/media.css">
     <script src="https://kit.fontawesome.com/31b1cc330f.js" crossorigin="anonymous"></script>
-    <title>Produtos</title>
+    <title>Produtos adquiridos</title>
 </head>
 
 <body>
@@ -18,48 +18,17 @@
         </div>
         <nav>
             <ul>
-                <li><a class="select" href="./lista-produtos.html">Produtos Disponiveis</a></li>
-                <li><a href="./meus-interesses.html">Produtos Adquiridos</a></li>
-                <li><a href="./perfil-interessado.html">Meu perfil</a></li>
+                <li><a id="link-produtos-disponiveis" class="select" href="./lista-produtos.html">Produtos
+                        Disponiveis</a></li>
+                <li><a id="link-produtos-adquiridos" href="./meus-interesses.html">Produtos Adquiridos</a></li>
+                <li><a id="link-meu-perfil" href="./perfil-interessado.html">Meu perfil</a></li>
                 <li><a href="../../index.html"> <i class="fa-solid fa-right-from-bracket select"></i> </a></li>
             </ul>
         </nav>
     </header>
     <main class="">
-        <div id="lista-produtos" class="d-flex flex-column fit">
-            <div class="row my-4  shadow rounded-lg">
-                <div class="col-md-4">
-                    <img src="https://www.hfbrasil.org.br/upload/galeria/thumbnail/0104143001456861520.jpg"
-                        class="custom_img rounded-lg" alt="Imagem do Produto">
-                </div>
-                <div class="col-md-8">
-                    <div class="d-flex justify-content-between align-items-center my-2 ">
-                        <div class="d-flex justify-content-start align-items-center text-center">
-                            <h4 class="my-0 font-weight-bold "><span>Cenoura</span></h4>
-                            <h5 class="my-0 font-weight-bold mx-2">30 caixas</h5>
-                        </div>
-                        <button class="mx-2 btn btn-principal adquirirBtn">Adquirir</button>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <h4 class="font-weight-bold small"><span>Validade:</span></h4>
-                            <h5 class="small">em 5 dias</h5>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <h4 class="font-weight-bold small"><span>Local de Retirada:</span></h4>
-                            <h5 class="small">Supermercado X</h5>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <h4 class="font-weight-bold small"><span>Contato:</span></h4>
-                            <h5 class="small">(34) 9 9999-9999</h5>
-                        </div>
-                        <div class="col-md-6">
-                            <h4 class="font-weight-bold small"><span>Descrição:</span></h4>
-                            <h5 class="small">Cenouras em boas condições</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="produtos-interessados" class="d-flex flex-column fit">
+
             <div class="row my-4 p-2 shadow rounded-lg">
                 <div class="col-md-4">
                     <img src="https://portalhospitaisbrasil.com.br/wp-content/uploads/Donativos.jpg"
@@ -71,7 +40,7 @@
                             <h4 class="my-0 font-weight-bold "><span>Produtos de Higiene</span></h4>
                             <h5 class="my-0 font-weight-bold mx-2">4 caixas</h5>
                         </div>
-                        <button class="mx-2 btn btn-principal adquirirBtn">Adquirir</button>
+                        <button class="mx-2 btn btn-principal">desistir</button>
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
@@ -107,6 +76,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-<script src="../../JavaScript/script-all-products.js"></script>
+<script src="../../JavaScript/script-produtos-adquiridos.js"></script>
+<script src="../../JavaScript/script_redirect.js"></script>
 
 </html>

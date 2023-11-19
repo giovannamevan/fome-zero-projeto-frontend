@@ -4,37 +4,37 @@ const listaProdutosContainer = document.getElementById('lista-produtos');
 listaProdutosContainer.innerHTML = ''
 let produtos = []
 
-async function postInteresse(product_id, ong_id, endpoint) {
-    ong_id = "65553677d508b4b0dc122457"
-    const bodyToSend = {
-        "product_id": product_id,
-        "ong_id": ong_id,
-    }
-    fetch(endpoint, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(bodyToSend),
-    })
-        .then((response) => {
-            if (response.ok) {
-                return response.body
-            } else {
-                console.error("Erro ao realizar o post.");
-            }
-        })
-        .catch((error) => {
-            console.error("Erro:", error);
-        });
-
-}
-
 function getUrlParam(nomeDoParametro) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(nomeDoParametro);
 }
 
+function editProduct(productId, donatorId) {
+    window.location.href = `./editar_produtos.html?id=${productId}&donatorId=${donatorId}`;
+}
+
+async function deleteProduct(productId) {
+    const deleteUrl = baseApiUrl + `ONG/${productId._id}`
+    try {
+        const response = await fetch(
+            deleteUrl,
+            {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error("Erro ao Deleter o produto da API");
+        }
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+
+}
 
 async function getProducts(endpoint) {
     try {
@@ -60,18 +60,22 @@ async function getProducts(endpoint) {
 }
 window.onload = async () => {
     const userId = getUrlParam('id')
-    const isOng = window.location.href.includes("Interessado")
-    const fetchEndpoint = baseApiUrl + "products/available";
+    const fetchEndpoint = baseApiUrl + `donator/products/${userId}`;
+
     produtos = await getProducts(fetchEndpoint)
 
 
     produtos.forEach(async produto => {
-        const addInterestEndpoint = baseApiUrl + "ONG/interests"
-        const produtoDiv = document.createElement('div');
-        const usePostInterest = async () => {
-            postInteresse(produto._id, userId, addInterestEndpoint)
-            produtos.splice(produtos.indexOf(produto), 1)
+        const useDeleteProduct = async () => {
+            const confirmed = window.confirm('Tem certeza que deseja excluir o item?');
+            if (confirmed) {
+                const divToRemove = this.closest('.col-md-8').parentNode;
+                await deleteProduct(this.dataset.productId); // Chama a função de exclusão
+                divToRemove.remove();
+            }
         }
+        console.log(userId)
+        const produtoDiv = document.createElement('div');
         produtoDiv.classList.add('row', 'my-4', 'shadow', 'rounded-lg');
 
         produtoDiv.innerHTML = `
@@ -85,7 +89,12 @@ window.onload = async () => {
                     <h4 class="my-0 font-weight-bold "><span>${produto.nome_produto}</span></h4>
                     <h5 class="my-0 font-weight-bold mx-2">${produto.quantidade_de_caixas} caixas</h5>
                 </div>
-                ${isOng ? `<button class="mx-2 btn btn-principal onclick=${await usePostInterest()} adquirirBtn">Adquirir</button>` : `<div></div>`}
+                <div>
+                <button class="mx-2 btn btn-principal btn-sm m-1 editItem"
+                    onclick="editProduct('${produto._id}','${userId}')">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
@@ -105,5 +114,11 @@ window.onload = async () => {
     `;
 
         listaProdutosContainer.appendChild(produtoDiv);
+    });
+
+    const deleteButtons = document.querySelectorAll('.deleteItem');
+    deleteButtons.forEach(function (button) {
+        button.addEventListener('click', async function () {
+        });
     });
 }

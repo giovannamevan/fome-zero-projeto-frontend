@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../Style/Style.css">
-    <link rel="stylesheet" href="../../../Style/Style.css">
-    <link rel="stylesheet" href="../Style/form.css">
+    <link rel="stylesheet" href="../../Style/Style.css">
+    <link rel="stylesheet" href="../../Style/Style.css">
+    <link rel="stylesheet" href="../../Style/form.css">
     <script src="https://kit.fontawesome.com/31b1cc330f.js" crossorigin="anonymous"></script>
     <title>Nova Doação</title>
 </head>
@@ -20,52 +20,52 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="./lista-produtos.html">Meus produtos</a></li>
-                    <li><a href="../Doador/perfil-doador.html">Meu perfil</a></li>
-                    <li><a class="select" href="../Doador/cadastrar-produtos.html">Adicionar Item</a>
+                    <li><a id="link-meus-produtos" class="select" href="./lista-produtos.html">Meus produtos</a></li>
+                    <li><a id="link-meu-perfil" href="./perfil-doador.html">Meu perfil</a></li>
+                    <li><a id="link-adicionar-item" href="./cadastrar-produtos.html">Adicionar Item</a>
                     </li>
                     <li><a href="../../index.html"> <i class="fa-solid fa-right-from-bracket select"></i> </a></li>
                 </ul>
             </nav>
         </header>
         <main class="mt-5 flex flex-column align-items-center  ">
-            <h1>Editar o Produto</h1>
+            <h1>Cadastrar Produto</h1>
             <form>
                 <div class="form-row p-2">
                     <label for="imagem">Imagem do Produto</label>
-                    <input type="file" class="form-control" id="imagem">
+                    <input type="file" class="form-control" id="imagem" required>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md">
                         <label for="name">Nome do Produto</label>
-                        <input type="text" class="form-control" id="name">
+                        <input type="text" class="form-control" id="name" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="mr-2 form-group col-md">
                         <label for="unidades">Quantidade<br />(por caixa)</label>
-                        <input type="number" class="form-control" id="unidades">
+                        <input type="number" class="form-control" id="unidades" required>
                     </div>
                     <div class="form-group col-md">
                         <label for="caixa">Quantidade<br />(de caixas)</label>
-                        <input type="number" class="form-control" id="caixa">
+                        <input type="number" class="form-control" id="caixa" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="validade">validade</label>
-                    <input type="date" class="form-control" id="validade">
+                    <input type="date" class="form-control" id="validade" required>
                 </div>
                 <div class="form-group">
                     <label for="telefone">telefone</label>
-                    <input type="tel" class="form-control" id="telefone">
+                    <input type="tel" class="form-control" id="telefone" required>
                 </div>
                 <div class="form-group">
                     <label for="endereco">endereço</label>
-                    <input type="text" class="form-control" id="endereco">
+                    <input type="text" class="form-control" id="endereco" required>
                 </div>
                 <div class="form-group col-md-4 p-0">
-                    <button class="btn btn-principal">Salvar</button>
-                    <button class="btn btn-principal" id="back">Voltar</button>
+                    <button id="btn-principal" class="btn btn-principal">Salvar</button>
+                    <button class="btn btn-principal ml-1" type="reset">Descartar</button>
                 </div>
             </form>
         </main>
@@ -77,10 +77,11 @@
         </div>
     </footer>
 
+    <script src="../../JavaScript/script-cadastro-produto.js"></script>
+    <script src="../../JavaScript/script_doador_redirect.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-<script src="../../JavaScript/script-item.js"></script>
 
 </html>

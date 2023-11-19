@@ -53,7 +53,7 @@ async function validateForm() {
         if (response == 404 || response == 500) {
             alert("O login não foi realizado")
         } else {
-            window.location.href = `../Usuário/Doador/lista-produtos.html?id=${response._id}`;
+            window.location.href = `../Usuario/Doador/lista-produtos.html?id=${response._id}`;
         }
     } else {
         const ongLoginEndpoint = baseApiUrl + "ONG/login"
@@ -66,7 +66,7 @@ async function validateForm() {
         if (response == 404 || response == 500) {
             alert("O login não foi realizado")
         } else {
-            window.location.href = `../Usuário/Interessado/lista-produtos.html?id=${response._id}`;
+            window.location.href = `../Usuario/Interessado/lista-produtos.html?id=${response._id}`;
         }
     }
     return false; // Evitar o envio padrão do formulário
