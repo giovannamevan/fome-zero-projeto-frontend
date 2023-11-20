@@ -1,11 +1,15 @@
 const baseApiUrl = "https://fome-zero-badkend.onrender.com/"
 const listaProdutosContainer = document.getElementById('lista-produtos');
 
-listaProdutosContainer.innerHTML = ''
+listaProdutosContainer.innerHTML = `
+
+            <text>
+                Não há nenhum produto disponível
+            </text>
+`
 let produtos = []
 
 async function postInteresse(product_id, ong_id, endpoint) {
-    ong_id = "65553677d508b4b0dc122457"
     const bodyToSend = {
         "product_id": product_id,
         "ong_id": ong_id,
@@ -64,8 +68,9 @@ window.onload = async () => {
     const fetchEndpoint = baseApiUrl + "products/available";
     produtos = await getProducts(fetchEndpoint)
 
-
+    console.log(produtos)
     produtos.forEach(async produto => {
+
         const addInterestEndpoint = baseApiUrl + "ONG/interests"
         const produtoDiv = document.createElement('div');
         const usePostInterest = async () => {
@@ -85,7 +90,7 @@ window.onload = async () => {
                     <h4 class="my-0 font-weight-bold "><span>${produto.nome_produto}</span></h4>
                     <h5 class="my-0 font-weight-bold mx-2">${produto.quantidade_de_caixas} caixas</h5>
                 </div>
-                ${isOng ? `<button class="mx-2 btn btn-principal onclick=${await usePostInterest()} adquirirBtn">Adquirir</button>` : `<div></div>`}
+                ${isOng ? `<button class="mx-2 btn btn-principal onclick='${await usePostInterest()}' adquirirBtn">Adquirir</button>` : `<div></div>`}
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
@@ -105,5 +110,7 @@ window.onload = async () => {
     `;
 
         listaProdutosContainer.appendChild(produtoDiv);
-    });
+
+    })
+    
 }

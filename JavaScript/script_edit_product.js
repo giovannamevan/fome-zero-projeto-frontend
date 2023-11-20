@@ -109,7 +109,7 @@ async function editProduct(endpoint) {
 window.onload = async () => {
     console.log(donatorId)
     console.log(productId)
-    donator = await getLoggedDonator(getDonatorEndpoint)
+    const donator = await getLoggedDonator(getDonatorEndpoint)
     endereco.value = donator.endereco
     telefone.value = donator.telefone
 }

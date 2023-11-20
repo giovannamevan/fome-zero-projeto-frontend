@@ -25,15 +25,37 @@ async function getAdquiridos(endpoint) {
     }
 }
 
+
+async function deleteInteresse(endpoint) {
+    try {
+        const response = await fetch(endpoint, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error("Erro ao buscar os valores da API");
+        }
+
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
+}
+
 window.onload = async () => {
     const userId = getUrlParam('id');
     const fetchAdquiridosEndpoint = baseApiUrl + `ONG/interests/${userId}`;
     produtosAdquiridos = await getAdquiridos(fetchAdquiridosEndpoint);
-
-    produtosAdquiridos.forEach(produto => {
+    console.log(produtosAdquiridos)
+    produtosAdquiridos.forEach(async produto => {
         const produtoDiv = document.createElement('div');
         produtoDiv.classList.add('row', 'my-4', 'p-2', 'shadow', 'rounded-lg');
-
+        const desistirEndpoint = baseApiUrl + `ONG/${userId}/${produto._id}`;
         produtoDiv.innerHTML = `
             <div class="col-md-4">
                 <img src="${produto.imagem_produto}" class="custom_img rounded-lg" alt="Imagem do Produto">
@@ -44,7 +66,7 @@ window.onload = async () => {
                         <h4 class="my-0 font-weight-bold "><span>${produto.nome_produto}</span></h4>
                         <h5 class="my-0 font-weight-bold mx-2">${produto.quantidade_de_caixas} caixas</h5>
                     </div>
-                    <button class="mx-2 btn btn-principal" onclick="desistirProduto('${produto._id}')">Desistir</button>
+                    <button class="mx-2 btn btn-principal" onclick="await deleteInteresse('${desistirEndpoint}')">Desistir</button>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -69,9 +91,4 @@ window.onload = async () => {
 
         listaProdutosAdquiridosContainer.appendChild(produtoDiv);
     });
-}
-
-function desistirProduto(produtoId) {
-    const desistirEndpoint = baseApiUrl + `ONG/desistir/${produtoId}`;
-    // Adicione lógica para enviar uma solicitação para desistir do produto no backend
 }
