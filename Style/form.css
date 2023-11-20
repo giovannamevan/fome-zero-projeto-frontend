@@ -156,3 +156,8 @@ html::-webkit-scrollbar-thumb {
 .button-format {
   padding: 0;
 }
+
+.btn {
+  background-color: #e58a1f;
+  color: white;
+}
