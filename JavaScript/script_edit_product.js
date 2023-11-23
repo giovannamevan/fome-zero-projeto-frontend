@@ -20,6 +20,7 @@ const botao = document.getElementById('btn-principal').onclick = async (event) =
     ]
         alert("Produto adicionado com sucesso")
     }*/
+    alert('produto editado! atualize a pagina com F5 e acesse a pagina "meus produtos"')
     return
 }
 

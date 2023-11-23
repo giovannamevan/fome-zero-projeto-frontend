@@ -15,7 +15,7 @@ const botao = document.getElementById('btn-principal').onclick = async (event) =
     event.preventDefault()
     const success = await postProduto(postProductEndpoint)
     console.log(success)
-    alert('Produto cadastrado, atualize a pagina e acesse a aba "Meus produtos" ')
+    alert('Produto cadastrado, atualize a pagina com F5 e acesse a aba "Meus produtos" ')
 
     return
 }
