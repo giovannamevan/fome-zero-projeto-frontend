@@ -75,7 +75,7 @@ window.onload = async () => {
         const produtoDiv = document.createElement('div');
         const usePostInterest = async () => {
             postInteresse(produto._id, userId, addInterestEndpoint)
-            produtos.splice(produtos.indexOf(produto), 1)
+            listaProdutosContainer.removeChild(produtoDiv)
         }
         produtoDiv.classList.add('row', 'my-4', 'shadow', 'rounded-lg');
 
@@ -90,7 +90,7 @@ window.onload = async () => {
                     <h4 class="my-0 font-weight-bold "><span>${produto.nome_produto}</span></h4>
                     <h5 class="my-0 font-weight-bold mx-2">${produto.quantidade_de_caixas} caixas</h5>
                 </div>
-                ${isOng ? `<button class="mx-2 btn btn-principal onclick='${await usePostInterest()}' adquirirBtn">Adquirir</button>` : `<div></div>`}
+                ${isOng ? `<button class="mx-2 btn btn-principal adquirirBtn">Adquirir</button>` : `<div></div>`}
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
@@ -109,8 +109,17 @@ window.onload = async () => {
         </div>
     `;
 
+        const button = produtoDiv.querySelector('button');
+
+        button.addEventListener('click', async () => {
+            await usePostInterest();
+            alert("Produto adicionado aos seus interesses")
+        });
+
+
+
         listaProdutosContainer.appendChild(produtoDiv);
 
     })
-    
+
 }

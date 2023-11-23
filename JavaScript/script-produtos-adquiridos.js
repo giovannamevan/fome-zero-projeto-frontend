@@ -27,6 +27,8 @@ async function getAdquiridos(endpoint) {
 
 
 async function deleteInteresse(endpoint) {
+    console.log("ativei a funcao")
+    console.log(endpoint)
     try {
         const response = await fetch(endpoint, {
             method: "DELETE",
@@ -40,11 +42,14 @@ async function deleteInteresse(endpoint) {
         }
 
         const data = await response.json();
+        console.log(data)
+        alert("Produto retirado com sucesso")
         return data;
     } catch (error) {
         console.error(error);
         return [];
     }
+
 }
 
 window.onload = async () => {
@@ -66,7 +71,7 @@ window.onload = async () => {
                         <h4 class="my-0 font-weight-bold "><span>${produto.nome_produto}</span></h4>
                         <h5 class="my-0 font-weight-bold mx-2">${produto.quantidade_de_caixas} caixas</h5>
                     </div>
-                    <button class="mx-2 btn btn-principal" onclick="await deleteInteresse('${desistirEndpoint}')">Desistir</button>
+                <button class="mx-2 btn btn-principal">Desistir</button>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -88,6 +93,14 @@ window.onload = async () => {
                 </div>
             </div>
         `;
+
+        const button = produtoDiv.querySelector('button');
+
+        button.addEventListener('click', async () => {
+            await deleteInteresse(desistirEndpoint);
+            listaProdutosAdquiridosContainer.removeChild(produtoDiv)
+            alert("Produto retirado dos seus interesses")
+        });
 
         listaProdutosAdquiridosContainer.appendChild(produtoDiv);
     });

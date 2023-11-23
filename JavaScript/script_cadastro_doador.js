@@ -1,3 +1,4 @@
+const baseApiUrl = "https://fome-zero-badkend.onrender.com/"
 
 async function postCadastro(cadastroPronto, endpoint) {
     fetch(endpoint, {
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const donatorEndpoint = baseApiUrl + "donator/"
             const result = await postCadastro(formattedDonator, donatorEndpoint)
+            alert('Cadastro feito com sucesso, use na área de login');
         }
     });
 });
