@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             const donatorEndpoint = baseApiUrl + "ONG/"
             const result = await postCadastro(formattedOng, donatorEndpoint)
+            alert('Cadastro feito com sucesso, use na área de login');
         }
     });
 
