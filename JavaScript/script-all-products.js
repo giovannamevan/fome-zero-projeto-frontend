@@ -1,12 +1,6 @@
 const baseApiUrl = "https://fome-zero-badkend.onrender.com/"
 const listaProdutosContainer = document.getElementById('lista-produtos');
 
-listaProdutosContainer.innerHTML = `
-
-            <text>
-                Não há nenhum produto disponível
-            </text>
-`
 let produtos = []
 
 async function postInteresse(product_id, ong_id, endpoint) {
